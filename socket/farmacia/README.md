@@ -1,19 +1,47 @@
-# Simulación Cliente-Servidor de Farmacia
+# 🤖 Simulación Cliente-Servidor de Farmacia
 
-**Contexto**:
+---
 
-La farmacia FarmaciaViva ha decidido digitalizar la venta de sus productos. Para ello, ha desarrollado un servidor que gestiona el stock de sus productos y recibe peticiones simuladas de clientes que desean comprar.
+## 🧪 Contexto
 
-**Requisitos del sistema**:
+**FarmaciaViva** ha dado el paso hacia la digitalización y necesita una arquitectura básica para simular su nuevo flujo de ventas.  
+El sistema está compuesto por un **servidor de stock** y **clientes concurrentes** que simulan compras.
 
-**1. Servidor**:
-- El servidor recibe una petición de stock:
-    - Si hay suficiente stock, actualiza el stock y responde con éxito. Si no hay suficiente, responde con el correspondiente mensaje.
+---
 
-**2. Productos**:
-- Hay solo 3 productos disponibles: Paracetamol, Ibuprofeno y Vitamina C. Cada uno tiene un stock inicial (por ejemplo, 10 unidades).
-- El stock se mantiene en memoria con el manejo de variables.
+## ✅ Requisitos del Sistema
 
-**3. Simulación de clientes**:
-- Debes crear varios hilos cliente que simulan peticiones de compra al servidor. Cada cliente solicitará un producto aleatorio y una cantidad entre 1 y 2.
-- Las peticiones deben realizarse de forma concurrente, y el servidor debe gestionar correctamente los accesos concurrentes al stock.
+### 1. 🖥️ Servidor
+
+- El servidor recibe **peticiones de compra**.
+  - Si hay stock suficiente, **descuenta la cantidad** y responde con un mensaje de éxito.
+  - Si **no hay stock suficiente**, responde con un **mensaje de error adecuado**.
+
+> El servidor es responsable de mantener la integridad del stock ante múltiples accesos concurrentes.
+
+---
+
+### 2. 🧴 Productos
+
+- Solo hay **3 productos disponibles**:
+  - Paracetamol
+  - Ibuprofeno
+  - Vitamina C
+
+- Cada producto tiene un **stock inicial** (ejemplo: 10 unidades).
+- El stock se gestiona **en memoria** mediante el uso de variables.
+
+> No se persiste en disco. Es una simulación temporal en tiempo de ejecución.
+
+---
+
+### 3. 🧵 Simulación de Clientes
+
+- Se deben crear **varios hilos cliente** (`threads`) que simulan peticiones concurrentes al servidor.
+- Cada hilo cliente:
+  - Solicita un **producto aleatorio**.
+  - Solicita una **cantidad aleatoria entre 1 y 2 unidades**.
+
+- El servidor debe:
+  - Atender las peticiones **de forma simultánea**.
+  - Gestionar los accesos al stock con técnicas de **sincronización de hilos**, evitando condiciones de carrera.

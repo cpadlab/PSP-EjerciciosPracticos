@@ -1,27 +1,59 @@
-# Lavandería CleanFast
-
-La empresa **CleanFast** ofrece un servicio de **lavandería automática** con autoservicio. Es un pequeño local de barrio que dispone de **4 lavadoras**, donde los clientes pueden venir a lavar su ropa sin asistencia. Cada lavado dura un tiempo aleatorio entre **5 y 10 segundos**, simulando el tiempo real que tomaría un ciclo corto.
-
-El lavado cuesta **3 euros**, pero **el cliente no paga ni se tiene en cuenta como atendido hasta que accede efectivamente a una lavadora.** Si no hay ninguna lavadora disponible, el cliente debe esperar en la cola hasta que alguna quede libre.
-
-Queremos desarrollar una **simulación concurrente** de esta lavandería, en la que se gestionen correctamente los recursos disponibles (las lavadoras) y el flujo de clientes de sforma realista.
+# 🧼 Lavandería CleanFast — Simulación Concurrente
 
 ---
 
-**El programa debe mostrar un menú con tres opciones:**
+## 🧪 Contexto
 
-1. **Simular llegada de clientes**: Esta opción lanza varios hilos, cada uno representando un cliente que llega a la lavandería.
-- Si hay lavadoras disponibles, el cliente accede, paga, y comienza su lavado (tiempo aleatorio entre 5 y 10 segundos).
-- Si todas las lavadoras están ocupadas, el cliente espera en una cola hasta
-que una quede libre
+**CleanFast** es una lavandería de autoservicio con **4 lavadoras disponibles**.  
+Los clientes pueden acudir de forma autónoma para lavar su ropa. Cada lavado tiene una duración aleatoria de entre `5` y `10` segundos, simulando un **ciclo corto de lavado real**.
 
-2. **Mostrar estado actual de la lavandería**: Esta opción muestra.
-- El número total de clientes atendidos (solo se cuenta cuando empieza el lavado).
-- La ganancia total (clientes atendidos × 3 €).
-- El número de lavadoras disponibles.
-- El número de lavadoras en uso.
+El servicio tiene un coste de `3 €`, **pero solo se cobra cuando el cliente accede efectivamente a una lavadora**.  
+Si todas las lavadoras están ocupadas, el cliente debe esperar su turno en una **cola de espera**.
 
-3. **Cerrar la lavandería**: Al seleccionar esta opción.
-- No se aceptan más clientes nuevos.
-- El programa debe esperar a que todos los clientes que estaban esperando o lavando terminen.
-- Cuando todas las lavadoras estén libres, se debe finalizar correctamente la ejecución.
+---
+
+## ⚙️ Objetivo de la Simulación
+
+Desarrollar una **simulación concurrente** que gestione correctamente:
+- El número limitado de lavadoras.
+- La llegada y espera de clientes.
+- El ciclo de lavado.
+- El cierre ordenado del sistema.
+
+---
+
+## 🧾 Menú del Programa
+
+### 1. 🚶 Simular llegada de clientes
+
+- Se lanzan múltiples **hilos**, cada uno representando un **cliente**.
+- Comportamiento del cliente:
+  - Si hay lavadoras disponibles:
+    - Accede, **paga 3 €**, y comienza su lavado (`5–10` s aleatorio).
+  - Si no hay lavadoras disponibles:
+    - **Espera en cola** hasta que una lavadora esté libre.
+
+---
+
+### 2. 📊 Mostrar estado actual de la lavandería
+
+Muestra en consola:
+
+- Número **total de clientes atendidos** (solo se cuentan cuando inician el lavado).
+- **Ganancia total acumulada** (`clientes × 3 €`).
+- **Número de lavadoras disponibles**.
+- **Número de lavadoras actualmente en uso**.
+
+---
+
+### 3. 🔒 Cerrar la lavandería
+
+Al seleccionar esta opción:
+
+- Se **deja de aceptar** la llegada de nuevos clientes.
+- El sistema espera a que:
+  - Todos los clientes **en cola** sean atendidos.
+  - Todos los lavados en proceso **finalicen correctamente**.
+- Una vez todas las lavadoras estén libres, mostrar mensaje de cierre:
+
+`Lavandería cerrada.`

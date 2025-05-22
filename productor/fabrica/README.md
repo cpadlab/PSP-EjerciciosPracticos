@@ -1,14 +1,47 @@
-# Fábrica de Piezas
+# 🏭 Fábrica de Piezas
 
-Estamos en una fábrica que produce piezas mecánicas. La fábrica cuenta con **tres máquinas automáticas** que generan piezas y las colocan en una **cinta transportadora** circular para que luego una **maquina empaquetadora** las recoja y las embale.
+---
 
-La cinta tiene una **capacidad máxima de 5 piezas**, por lo que sí está llena, las máquinas deben esperar a que se libere espacio. Por otro lado, si la maquina empaquetadora intenta recoger una pieza y no hay ninguna disponible, también deberá esperar a que las máquinas depositen una.
+## 🧪 Contexto
 
-**Dinámica**:
-1. Las máquinas generan piezas cada 1–3 s y las ponen en la cinta si hay espacio; si está llena, esperan.
-2. El empaquetador retira una pieza cada 2 s; si no hay piezas, espera.
-3. Mostrar el estado de la cinta cada vez que se ponga o retire una pieza.
+Estamos en una **fábrica de piezas mecánicas** con un sistema automatizado que simula un flujo de producción real.  
+El sistema cuenta con **tres máquinas automáticas** que producen piezas, una **cinta transportadora circular** y una **máquina empaquetadora** que recoge y embala las piezas.
 
-**¿Cuándo termina?**: Cuando se fabriquen 50 piezas. Pero no pueden quedarse piezas en la cinta.
+---
 
-Mostrar el mensaje “Fábrica cerrada” cuando todos los hilos terminen.
+## ⚙️ Estructura del Sistema
+
+- **Máquinas productoras (3 hilos)**:
+  - Generan piezas automáticamente cada **1 a 3 segundos**.
+  - Colocan la pieza en la cinta **si hay espacio disponible**.
+  - Si la cinta está llena, deben **esperar**.
+
+- **Máquina empaquetadora (1 hilo)**:
+  - Retira una pieza cada **2 segundos**.
+  - Si no hay piezas en la cinta, **espera** hasta que haya al menos una.
+
+---
+
+## 📦 Cinta Transportadora
+
+- La cinta tiene una **capacidad máxima de 5 piezas**.
+- Opera como una **estructura circular sincronizada**.
+- Cada vez que se **agregue** o **retire** una pieza, se debe **mostrar el estado actual** de la cinta.
+
+---
+
+## ⏳ Dinámica de Funcionamiento
+
+1. Las máquinas productoras generan piezas cada `1–3` segundos.
+2. La máquina empaquetadora retira una pieza cada `2` segundos.
+3. El sistema **sincroniza las operaciones** para evitar condiciones de carrera o bloqueos.
+
+---
+
+## 🛑 Finalización del Proceso
+
+- El sistema finaliza cuando se hayan **fabricado exactamente 50 piezas**.
+- La cinta debe estar **vacía al final del proceso**.
+- Una vez todos los hilos han terminado su trabajo, se debe mostrar el mensaje:
+
+`Fábrica cerrada`
