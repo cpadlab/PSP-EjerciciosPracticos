@@ -40,8 +40,6 @@ public class Cocinero extends Thread {
                 
             }
             
-            
-            
         }
         
         System.out.println(nombre + " ha terminado su trabajo.");

@@ -40,8 +40,9 @@ A continuación, se muestra una tabla con las **categorías**, **subproyectos** 
 | `https`     | `farmacia`     | Venta web segura de productos farmacéuticos con gestión de stock en fichero. |
 | `https`     | `fistro`       | Servidor HTTPS que responde con frases típicas de humor, en entorno seguro. |
 | `socket`    | `farmacia`     | Simulación concurrente cliente-servidor de farmacia con stock en memoria. |
+| `socket`    | `restaurante`  | - |
 | `productor` | `fabrica`      | Simulación de fábrica con cinta transportadora y sincronización de procesos. |
 | `productor` | `lavanderia`   | Simulación concurrente de lavandería autoservicio con gestión de lavadoras. |
-| `productor` | `abejas`   | - |
-| `productor` | `cocina`   | - |
+| `productor` | `abejas`       | - |
+| `productor` | `cocina`       | - |
 
