@@ -39,6 +39,7 @@ A continuación, se muestra una tabla con las **categorías**, **subproyectos** 
 | `http`      | `hotel`        | Servidor HTTP que gestiona reservas de habitaciones en archivos cifrados (AES). |
 | `https`     | `farmacia`     | Venta web segura de productos farmacéuticos con gestión de stock en fichero. |
 | `https`     | `fistro`       | Servidor HTTPS que responde con frases típicas de humor, en entorno seguro. |
+| `https`     | `newsletter`   | - |
 | `socket`    | `farmacia`     | Simulación concurrente cliente-servidor de farmacia con stock en memoria. |
 | `socket`    | `restaurante`  | - |
 | `productor` | `fabrica`      | Simulación de fábrica con cinta transportadora y sincronización de procesos. |
