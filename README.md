@@ -42,6 +42,7 @@ A continuación, se muestra una tabla con las **categorías**, **subproyectos** 
 | `https`     | `newsletter`   | - |
 | `socket`    | `farmacia`     | Simulación concurrente cliente-servidor de farmacia con stock en memoria. |
 | `socket`    | `restaurante`  | - |
+| `socket`    | `policia`      | - |
 | `productor` | `fabrica`      | Simulación de fábrica con cinta transportadora y sincronización de procesos. |
 | `productor` | `lavanderia`   | Simulación concurrente de lavandería autoservicio con gestión de lavadoras. |
 | `productor` | `abejas`       | - |
